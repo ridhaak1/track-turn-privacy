@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Track Turn – Privacy Policy</title>
+<meta name="description" content="Privacy policy of Track Turn, a puzzle game for Android. No personal data is collected.">
+<link rel="icon" type="image/png" href="icon-512.png">
+<style>
+  /* Fonts are the game's own (SIL Open Font License), served from this folder:
+     no requests to Google or any other third party. */
+  @font-face { font-family: "Fredoka"; font-weight: 600; font-display: swap; src: url("fonts/Fredoka_600SemiBold.ttf") format("truetype"); }
+  @font-face { font-family: "Nunito"; font-weight: 600; font-display: swap; src: url("fonts/Nunito_600SemiBold.ttf") format("truetype"); }
+  @font-face { font-family: "Nunito"; font-weight: 800; font-display: swap; src: url("fonts/Nunito_800ExtraBold.ttf") format("truetype"); }
+
+  /* Colors from the game (src/theme/colors.ts). */
+  :root {
+    --bg: #E6ECF8;
+    --hill-light: #DCE3F4;
+    --hill-dark: #D3DBF0;
+    --card: #FFFFFF;
+    --card-shadow: #D2D9EA;
+    --text: #2D3352;
+    --soft: #555C7A;
+    --accent: #F05A4E;
+    --accent-shadow: #C9463B;
+    --accent-text: #B23E33;
+    --accent-soft: #FCE3E0;
+    --mint: #7BC4B2;
+    --mint-soft: #DDF1EB;
+    --mint-text: #2F7A68;
+    --star: #F5B83D;
+    --rail: #8A92B2;
+    --tie: #C9D1E6;
+    --code-bg: #EEF1F8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1E2236;
+      --hill-light: #262B42;
+      --hill-dark: #2C3250;
+      --card: #272C44;
+      --card-shadow: #161927;
+      --text: #EEF1FA;
+      --soft: #B4BBD6;
+      --accent-text: #FF8F84;
+      --accent-soft: #4A3346;
+      --mint-soft: #27474A;
+      --mint-text: #8FD6C4;
+      --rail: #9AA2C4;
+      --tie: #3A4060;
+      --code-bg: #1E2236;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font: 600 17px/1.65 "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  strong { font-weight: 800; }
+  a { color: var(--accent-text); font-weight: 800; text-underline-offset: 3px; }
+  code {
+    font: 700 0.82em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 40px 16px 0; position: relative; z-index: 1; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 28px; }
+  .icon {
+    width: 96px; height: 96px;
+    border-radius: 26px;
+    display: block; margin: 0 auto 16px;
+    box-shadow: 0 6px 0 var(--card-shadow);
+  }
+  h1, h2, .pill { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; }
+  h1 { font-size: 2.6em; line-height: 1.1; margin: 0; letter-spacing: 0.01em; }
+  .pill {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #FFFFFF;
+    font-size: 1.05em;
+    box-shadow: 0 4px 0 var(--accent-shadow);
+  }
+  .meta { color: var(--soft); margin: 14px 0 0; font-size: 0.95em; }
+
+  /* Clay cards: a darker copy of the shape a few px below, like in the game. */
+  .card {
+    background: var(--card);
+    border-radius: 22px;
+    padding: 22px 22px 14px;
+    margin: 0 0 22px;
+    box-shadow: 0 5px 0 var(--card-shadow);
+  }
+  h2 {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 1.35em; line-height: 1.25;
+    margin: 0 0 12px;
+  }
+  .num {
+    flex: none;
+    width: 34px; height: 34px;
+    border-radius: 11px;
+    display: grid; place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent-text);
+    font-size: 0.8em;
+  }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 22px; margin: 0 0 10px; }
+  li::marker { color: var(--accent); }
+
+  /* "Short version" card */
+  .summary { background: var(--mint-soft); box-shadow: 0 5px 0 var(--mint); }
+  .summary h2 { color: var(--mint-text); }
+  .summary .big { font-size: 1.15em; }
+  .checks {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;
+  }
+  .checks li { display: flex; gap: 10px; align-items: flex-start; margin: 0; }
+  .checks li::before {
+    content: "✓";
+    flex: none;
+    width: 24px; height: 24px; margin-top: 2px;
+    border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--mint);
+    color: #FFFFFF;
+    font-weight: 800; font-size: 0.8em;
+  }
+  @media (max-width: 560px) { .checks { grid-template-columns: 1fr; } }
+
+  /* Permission rows */
+  .perms { list-style: none; padding: 0; }
+  .perms li {
+    padding: 10px 0;
+    border-top: 2px dashed var(--tie);
+    margin: 0;
+  }
+  .perms li:first-child { border-top: 0; }
+  .perms strong { display: block; }
+
+  /* A little piece of track as a divider, drawn like the game's tiles. */
+  .track {
+    height: 22px;
+    margin: 6px 8px 28px;
+    position: relative;
+    background: repeating-linear-gradient(90deg, var(--tie) 0 8px, transparent 8px 22px);
+    border-radius: 4px;
+  }
+  .track::before, .track::after {
+    content: ""; position: absolute; left: 0; right: 0;
+    height: 4px; border-radius: 2px; background: var(--rail);
+  }
+  .track::before { top: 4px; }
+  .track::after { bottom: 4px; }
+  .train {
+    position: absolute; top: 50%; left: 18%;
+    width: 46px; height: 26px;
+    transform: translateY(-50%);
+    background: var(--accent);
+    border-radius: 9px 14px 14px 9px;
+    box-shadow: 0 3px 0 var(--accent-shadow);
+    z-index: 1;
+  }
+  .train::after {
+    content: ""; position: absolute; right: 7px; top: 6px;
+    width: 12px; height: 14px; border-radius: 4px;
+    background: #FFE3DF;
+  }
+  .station {
+    position: absolute; top: 50%; right: 0;
+    width: 30px; height: 30px; border-radius: 9px;
+    transform: translateY(-50%);
+    background: var(--mint);
+    box-shadow: 0 3px 0 var(--mint-text);
+    z-index: 1;
+  }
+
+  /* Contact card */
+  .contact { text-align: center; }
+  .contact h2 { justify-content: center; }
+  .button {
+    display: inline-block;
+    margin: 4px 0 12px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; font-size: 1.1em;
+    box-shadow: 0 6px 0 var(--accent-shadow);
+    word-break: break-all;
+  }
+  .button:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-shadow); }
+
+  footer {
+    text-align: center; color: var(--soft);
+    font-size: 0.9em;
+    padding: 8px 16px 140px;
+    position: relative; z-index: 1;
+  }
+
+  /* Soft hills at the bottom, like the home screen. */
+  .hills { position: fixed; left: 0; right: 0; bottom: 0; height: 120px; pointer-events: none; z-index: 0; }
+  .hills::before, .hills::after { content: ""; position: absolute; border-radius: 50%; }
+  .hills::before { left: -20%; width: 90%; height: 220px; bottom: -150px; background: var(--hill-light); }
+  .hills::after { right: -25%; width: 95%; height: 240px; bottom: -170px; background: var(--hill-dark); }
+</style>
+</head>
+<body>
+<div class="hills" aria-hidden="true"></div>
+
+<div class="page">
+  <header>
+    <img class="icon" src="icon-512.png" alt="Track Turn app icon" width="96" height="96">
+    <h1>Track Turn</h1>
+    <div class="pill">Privacy Policy</div>
+    <p class="meta">Effective date: 19 October 2026</p>
+  </header>
+
+  <section class="card summary">
+    <h2>The short version</h2>
+    <p class="big">Track Turn is a puzzle game for Android made by an independent developer (“I”, “me”). This policy explains what happens with data when you play. <strong>I do not collect any personal data.</strong></p>
+    <ul class="checks">
+      <li>No account or sign-in.</li>
+      <li>No advertising and no advertising IDs.</li>
+      <li>No analytics, tracking or crash-reporting services.</li>
+      <li>No in-app purchases.</li>
+      <li>No access to your contacts, photos, files, location, camera or microphone.</li>
+      <li>Nothing you do in the game is sent to me.</li>
+    </ul>
+  </section>
+
+  <div class="track" aria-hidden="true"><div class="train"></div><div class="station"></div></div>
+
+  <section class="card">
+    <h2><span class="num">1</span>Data stored on your phone</h2>
+    <p>Your progress (current and unlocked levels), your best stars per level, which tutorial hints you have seen, and your settings (vibration, sounds, appearance) are saved <strong>only on your phone</strong>, in the app's own storage. The game never sends them anywhere.</p>
+    <p>If you have Android's own backup turned on, Android may include them in your phone's backup to your Google account, as it does for most apps; that backup is controlled by you and Google, and I never receive it.</p>
+    <p>Uninstalling the app or clearing its data deletes them from the phone. You can also reset your progress at any time in the game's Settings.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">2</span>Content updates (Expo / EAS Update)</h2>
+    <p>To deliver fixes and new levels without a full app update, the game uses Expo's update service (EAS Update), run by Expo (650 Industries, Inc.). When the game starts, your phone asks Expo's servers over an encrypted (HTTPS) connection whether a newer version of the game content exists, and downloads it in the background if so. The game works fully offline; if there is no connection, it simply skips the check.</p>
+    <p>According to Expo's documentation and privacy policy, this request contains only technical information needed to deliver the right update, and no identifying information such as unique device identifiers. It includes:</p>
+    <ul>
+      <li>the phone's operating system (Android);</li>
+      <li>the game's project ID, update channel and version information (runtime version, the ID of the update currently installed and of the one that came with the app, and IDs of recently failed updates);</li>
+      <li>only if the game crashed the last time it ran: the technical error message of that crash (so a broken update can be rolled back). It contains no personal information;</li>
+      <li>a random token created by the app when it is installed, used by Expo to tell whether an installation has requested an update. It is not linked to you, your account or your phone's hardware IDs, and it is removed from the phone when you uninstall the game.</li>
+    </ul>
+    <p>Like any internet request, it also reveals your network's IP address to Expo's servers. I do not receive or use this information. Expo processes it under its own <a href="https://expo.dev/privacy">privacy policy</a> (see also <a href="https://expo.dev/privacy-explained">Expo's privacy explained page</a>).</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">3</span>Permissions</h2>
+    <p>The game asks for no permissions while you play (no pop-ups). Android grants these basic permissions at install time:</p>
+    <ul class="perms">
+      <li><strong>Internet</strong> <code>INTERNET</code> – to check for and download content updates.</li>
+      <li><strong>View network connections</strong> <code>ACCESS_NETWORK_STATE</code> – so the update check knows whether a connection is available.</li>
+      <li><strong>Control vibration</strong> <code>VIBRATE</code> – for the small haptic taps in the game (can be turned off in Settings).</li>
+      <li><strong>Change audio settings</strong> <code>MODIFY_AUDIO_SETTINGS</code> – used by the sound-effects player for audio playback. The game never records audio and has no microphone access.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">4</span>Children</h2>
+    <p>Track Turn is not directed at children under 13, and I do not knowingly collect personal data from anyone, including children.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">5</span>Changes to this policy</h2>
+    <p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+  </section>
+
+  <section class="card contact">
+    <h2>Contact</h2>
+    <p>Questions about privacy? Send me an email:</p>
+    <a class="button" href="mailto:info.ridha.dev@gmail.com">info.ridha.dev@gmail.com</a>
+  </section>
+</div>
+
+<footer>Track Turn · Privacy Policy</footer>
+</body>
+</html>
